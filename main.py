@@ -9,5 +9,9 @@ def home():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.get_json()
-    print("Received from LINE:", data)
-    return jsonify({"status": "received"})
+    print("Received data from LINE:", data)
+    return '', 200
+
+if __name__ == '__main__':
+    app.run()
+
