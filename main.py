@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -9,9 +9,8 @@ def home():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.get_json()
-    print("Received data from LINE:", data)
+    print("✅ ได้รับข้อมูลจาก LINE:", data)
     return '', 200
 
 if __name__ == '__main__':
     app.run()
-
